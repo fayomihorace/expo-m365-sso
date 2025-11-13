@@ -9,6 +9,7 @@ export default function NotFoundScreen() {
         <Text style={styles.text}>This screen doesn't exist.</Text>
         <Link href="/" style={styles.link}>
           <Text>Go to home screen!</Text>
+          {process.env.EXPO_PUBLIC_MICROSOFT_REDIRECT_URI}
         </Link>
       </View>
     </>

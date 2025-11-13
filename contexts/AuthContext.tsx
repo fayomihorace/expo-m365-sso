@@ -108,6 +108,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // await callApi(authCode, `${backendUrl}/admin`);
 
     
+
     try {
       // Add timeout to fetch
       const controller = new AbortController();
@@ -117,10 +118,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         addStatusMessage('📡 Sending POST request...');
         const requestBody = {
           auth_code: authCode,
-          redirectUri: actualRedirectUri, // Use the actual redirect URI that was sent to Microsoft
+          redirect_uri: actualRedirectUri, // Use the actual redirect URI that was sent to Microsoft
           code_verifier: codeVerifier, // Include the PKCE code_verifier
         };
-        addStatusMessage(`📦 Request body: ${JSON.stringify(requestBody).substring(0, 150)}...`);        const response = await fetch(`${backendUrl}/api/v1/oauth/callback/`, {
+        addStatusMessage(`📦 Request body: ${JSON.stringify(requestBody).substring(0, 150)}...`);        
+        const response = await fetch(`${backendUrl}/api/v1/oauth/callback/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -129,6 +131,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           body: JSON.stringify(requestBody),
           signal: controller.signal,
         });
+
 
         // clearTimeout(timeoutId);
         addStatusMessage(`📥 Backend response status: ${response.status}`);
@@ -145,7 +148,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         // Store tokens
         await AsyncStorage.setItem('access_token', data.access);
         await AsyncStorage.setItem('refresh_token', data.refresh);
-        addStatusMessage('💾 Tokens saved to storage');
+        addStatusMessage('💾 Tokens saved to storage ' + data.access);
 
         setTokens({ access: data.access, refresh: data.refresh });
         setUser({ authenticated: true });

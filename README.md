@@ -117,10 +117,15 @@ npx expo start --localhost --android
 
 -With expo
 
-```
+```bash
 npx expo start 
 ```
 
+or
+
+```bash
+EXPO_OFFLINE=1 npx expo start
+```
 
 # Build apk
 1- Prebuild
