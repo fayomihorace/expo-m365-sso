@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1003046455844",
+    "firebase_url": "https://afriservices-ac7f3.firebaseio.com",
+    "project_id": "afriservices-ac7f3",
+    "storage_bucket": "afriservices-ac7f3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003046455844:android:ef241fe21803f45516a6b1",
+        "android_client_info": {
+          "package_name": "com.infraneo.agdt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003046455844-uq95f9ap6ude2holfgc0adphep9f3rrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH6Ajcw-qJHoUtfwD_2GaxLxdE7vnSJqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003046455844-uq95f9ap6ude2holfgc0adphep9f3rrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

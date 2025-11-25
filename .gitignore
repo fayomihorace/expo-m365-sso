@@ -33,4 +33,8 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
-android/
+android/*
+!android/app/
+android/app/*
+!android/app/google-services.json
+!android/app/build.gradle
